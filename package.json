@@ -1,0 +1,16 @@
+{
+  "name": "zoomable",
+  "version": "0.0.1",
+  "description": "A Preact Component for easy zooming in SVG",
+  "main": "index.js",
+  "repository": "https://github.com/DerDrodt/zoomable.git",
+  "author": "drodt <d.drodt@gmx.de>",
+  "license": "GPL3",
+  "devDependencies": {
+    "rollup": "^2.3.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "preact": "^10.3.4"
+  }
+}
