@@ -8,6 +8,8 @@ import { mousePos, touchPos, dist } from "./util/pos";
 
 // Zoom algorithms taken from d3-zoom
 
+export { Point, Extent, Transform };
+
 const filterMouseEvent = (e: MouseEvent) => !e.button;
 // const filterTouchEvent = (e: TouchEvent) => !e.ctrlKey;
 
