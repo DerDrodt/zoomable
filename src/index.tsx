@@ -8,9 +8,6 @@ import { mousePos, touchPos, dist } from "./util/pos";
 
 // Zoom algorithms taken from d3-zoom
 
-export const SUPPORTS_TOUCH =
-    navigator.maxTouchPoints || "ontouchstart" in globalThis;
-
 const filterMouseEvent = (e: MouseEvent) => !e.button;
 // const filterTouchEvent = (e: TouchEvent) => !e.ctrlKey;
 
