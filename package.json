@@ -9,6 +9,7 @@
     "author": "drodt <d.drodt@gmx.de>",
     "license": "GPL-3.0-only",
     "devDependencies": {
+        "bundlesize": "^0.18.0",
         "rollup": "^2.3.2",
         "rollup-plugin-commonjs": "^10.1.0",
         "rollup-plugin-node-resolve": "^5.2.0",
@@ -22,7 +23,15 @@
         "preact": "^10.3.4"
     },
     "scripts": {
+        "clean-dist": "rm -rf dist",
         "build": "rollup -c",
-        "dev": "rollup -c -w"
-    }
+        "dev": "rollup -c -w",
+        "test": "bundlesize"
+    },
+    "bundlesize": [
+        {
+            "path": "./dist/zoomable.min.esm.js",
+            "maxSize": "3 kB"
+        }
+    ]
 }
