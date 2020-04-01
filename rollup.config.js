@@ -63,11 +63,13 @@ const typescript = () =>
         esModuleInterop: true,
     });
 
+const UMDName = "PreactZoom";
+
 export default [
     {
         input: "src/zoomable.tsx",
         output: {
-            name: "Zoomable",
+            name: UMDName,
             file: pkg.browser.replace(".min", ""),
             format: "umd",
         },
@@ -76,7 +78,7 @@ export default [
     {
         input: "src/zoomable.tsx",
         output: {
-            name: "Zoomable",
+            name: UMDName,
             file: pkg.browser,
             format: "umd",
         },

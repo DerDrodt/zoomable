@@ -1,5 +1,5 @@
 {
-    "name": "zoomable",
+    "name": "preact-zoom",
     "version": "0.0.1",
     "description": "A Preact Component for easy zooming in SVG",
     "main": "dist/zoomable.js",
