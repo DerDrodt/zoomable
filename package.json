@@ -30,7 +30,7 @@
     "scripts": {
         "build": "rm -rf dist && tsc && rollup -c",
         "dev": "rollup -c -w",
-        "test": "bundlesize"
+        "test": "npm run build && bundlesize"
     },
     "bundlesize": [
         {
