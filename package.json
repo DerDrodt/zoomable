@@ -2,8 +2,8 @@
     "name": "zoomable",
     "version": "0.0.1",
     "description": "A Preact Component for easy zooming in SVG",
-    "main": "dist/zoomable.cjs.js",
-    "module": "dist/zoomable.esm.js",
+    "main": "dist/zoomable.js",
+    "module": "dist/zoomable.js",
     "browser": "dist/zoomable.min.umd.js",
     "repository": "https://github.com/DerDrodt/zoomable.git",
     "author": "drodt <d.drodt@gmx.de>",
@@ -22,16 +22,15 @@
     "dependencies": {
         "preact": "^10.3.4"
     },
-    "types": "src/index.tsx",
+    "types": "dist/zoomable.d.ts",
     "scripts": {
-        "clean-dist": "rm -rf dist",
-        "build": "rollup -c",
+        "build": "rm -rf dist && tsc && rollup -c",
         "dev": "rollup -c -w",
         "test": "bundlesize"
     },
     "bundlesize": [
         {
-            "path": "./dist/zoomable.min.esm.js",
+            "path": "./dist/zoomable.min.js",
             "maxSize": "3 kB"
         }
     ]
