@@ -81,11 +81,11 @@ export default class Zoomable extends Component<Props, State> {
         transform: IDENTITY,
     };
 
-    public ref = createRef<SVGSVGElement>();
-    public touchStarting?: number;
-    public touchEnding?: number;
+    private ref = createRef<SVGSVGElement>();
+    private touchStarting?: number;
+    private touchEnding?: number;
 
-    public onWheel = (e: WheelEvent) => {
+    private onWheel = (e: WheelEvent) => {
         if (!this.ref.current) {
             return;
         }
@@ -134,7 +134,7 @@ export default class Zoomable extends Component<Props, State> {
         this.setState({ transform: t, gesture: g });
     };
 
-    public onMouseDown = (ev: MouseEvent) => {
+    private onMouseDown = (ev: MouseEvent) => {
         // Ignore right click, etc.
         if (!filterMouseEvent(ev)) {
             return;
@@ -194,11 +194,7 @@ export default class Zoomable extends Component<Props, State> {
         window.addEventListener("mouseup", mouseUpped);
     };
 
-    public onDblClick = (e: MouseEvent) => {
-        console.log(e);
-    };
-
-    public onTouchStart = (e: TouchEvent) => {
+    private onTouchStart = (e: TouchEvent) => {
         e.stopImmediatePropagation();
         if (!this.ref.current) {
             return;
@@ -258,7 +254,7 @@ export default class Zoomable extends Component<Props, State> {
         this.setState({ transform: t, gesture: g });
     };
 
-    public onTouchMove = (e: TouchEvent) => {
+    private onTouchMove = (e: TouchEvent) => {
         let t = this.state.transform;
         const svg = this.ref.current;
         if (!svg) {
@@ -329,7 +325,7 @@ export default class Zoomable extends Component<Props, State> {
         });
     };
 
-    public onTouchEnd = (e: TouchEvent) => {
+    private onTouchEnd = (e: TouchEvent) => {
         const t = this.state.transform;
         const svg = this.ref.current;
         if (!svg) {
@@ -382,7 +378,7 @@ export default class Zoomable extends Component<Props, State> {
      * @param {Event} e - The event to handle
      * @returns {void} - void
      */
-    public handleGoTo = (e: Event) => {
+    private handleGoTo = (e: Event) => {
         const { detail } = e as GoToEvent;
         if (!this.props.transformGoTo) {
             return;
@@ -395,7 +391,7 @@ export default class Zoomable extends Component<Props, State> {
      * Handle the CenterEvent
      * @returns {void} - void
      */
-    public handleCenter = () => {
+    private handleCenter = () => {
         this.setTransform(IDENTITY);
     };
 
@@ -416,7 +412,6 @@ export default class Zoomable extends Component<Props, State> {
                 {...props}
                 onWheel={this.onWheel}
                 onMouseDown={this.onMouseDown}
-                onDblClick={this.onDblClick}
                 onTouchStart={this.onTouchStart}
                 onTouchMove={this.onTouchMove}
                 onTouchEnd={this.onTouchEnd}
