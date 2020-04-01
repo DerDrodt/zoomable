@@ -10,7 +10,7 @@
     "license": "GPL-3.0-only",
     "devDependencies": {
         "@rollup/plugin-typescript": "^4.0.0",
-        "bundlesize": "^0.18.0",
+        "bundlewatch": "^0.2.6",
         "rollup": "^2.3.2",
         "rollup-plugin-commonjs": "^10.1.0",
         "rollup-plugin-node-resolve": "^5.2.0",
@@ -30,12 +30,14 @@
     "scripts": {
         "build": "rm -rf dist && tsc && rollup -c",
         "dev": "rollup -c -w",
-        "test": "npm run build && bundlesize"
+        "test": "npm run build && bundlewatch"
     },
-    "bundlesize": [
-        {
-            "path": "./dist/zoomable.min.js",
-            "maxSize": "3 kB"
-        }
-    ]
+    "bundlewatch": {
+        "files": [
+            {
+                "path": "./dist/zoomable.min.js",
+                "maxSize": "3 kB"
+            }
+        ]
+    }
 }
